@@ -31,9 +31,6 @@ public class FilmController {
 	@Autowired
 	private FilmService filmService;
 
-	@Autowired
-	RestTemplate restTemplate;
-
 	@RequestMapping("/films")
 	public String FilmAll(final Model model) {
 		Flux<ArrayList<Film>> filmDtoFlux = this.filmService.listFilm();

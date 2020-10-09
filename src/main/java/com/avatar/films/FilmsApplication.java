@@ -11,8 +11,5 @@ public class FilmsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FilmsApplication.class, args);
 	}
-	@Bean
-	public RestTemplate getRestTemplate() {
-		return new RestTemplate();
-	}
+
 }
