@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">FILMS</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th> Title</th>
+            <th> Director </th>
+            <th> Producer </th>
+            <th> Release Date </th>
+            <th> Details</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="film : ${listFilm}">
+            <td><span th:text="${film.title}"> </span></td>
+            <td><span th:text="${film.director}"> </span></td>
+            <td><span th:text="${film.producer}"> </span></td>
+            <td><span th:text="${film.release_date}"> </span></td>
+            <td><a class="btn btn-primary" th:href="@{'/film'(url=${film.url})}"> View Details ...</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

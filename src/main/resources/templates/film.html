@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            <h2><span th:text="${film.title}"> </span></h2>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Director</h5>
+            <p class="card-text"><span th:text="${film.title}"> </span></p>
+            <h5 class="card-title">Producer</h5>
+            <p class="card-text"><span th:text="${film.producer}"> </span></p>
+            <h5 class="card-title">Characters</h5>
+            <ul class="list-group">
+                <li class="list-group-item" th:each="character : ${film.characters}"><span th:text="${character}"> </span</li>
+            </ul>
+            <a class="btn btn-primary" th:href="@{'/films'}"> Return</a>
+        </div>
+        <div class="card-footer text-muted">
+            <span th:text="${film.release_date}"> </span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

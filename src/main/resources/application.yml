@@ -1,0 +1,6 @@
+server:
+  port: 7890
+api:
+  rest:
+    uri:
+      film: https://swapi.dev/api/films/
